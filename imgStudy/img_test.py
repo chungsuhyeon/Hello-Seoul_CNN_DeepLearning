@@ -1,6 +1,5 @@
 import cnn_model
 import keras
-import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
 import matplotlib.pyplot as plt
@@ -49,5 +48,5 @@ def check_photo_str(path, filename):
 
     return {"foodname":LABELS[idx], "accuracy":per, "imgName":filename}
 
-if __name__ == '__main__':
-    check_photo_str('C:/Python_code/imgStudy/img/searchImg/e5c11e62.jpg', "e5c11e62.jpg")
+# if __name__ == '__main__':
+#     check_photo_str('C:/Python_code/imgStudy/img/searchImg/e5c11e62.jpg', "e5c11e62.jpg")

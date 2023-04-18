@@ -1,8 +1,6 @@
 # CNN으로 MNIST 분류 문제 풀기
 import cnn_model
 import keras
-import matplotlib
-matplotlib.use('Qt5Agg')
 import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.model_selection import train_test_split
