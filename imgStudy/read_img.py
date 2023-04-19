@@ -33,7 +33,7 @@ def glob_files(path, label):
         # 이미지 파일 읽어 들이기
         img = Image.open(f)
         img = img.convert("RGB") # 색공간 변환하기
-        img = img.resize((photo_size, photo_size)) # 크기 변경하기
+        img = img.resize((photo_size, photo_size)) # 크기 변경하기 = 이미지의 실제 크기가 변경되는 것이 아닌 픽셀 수가 변경되는 것 = 픽셀 수를 줄이면 그만큼 파일을 손상한 것이기 때문에 원본의 해상도로 돌릴 수 없다
         img = np.asarray(img)
         x.append(img)
         y.append(label)

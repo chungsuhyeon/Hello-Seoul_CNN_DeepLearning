@@ -30,13 +30,6 @@ def def_model(in_shape, nb_classes):
     model.add(Dropout(0.5))
     model.add(Dense(nb_classes, activation='softmax')) # 출력층 nb_classes개 / softmax사용
 
-    # 최적화 함수 지정 = 모델 실행 환경 설정 (오차함수 : categorical_crossentropy / 최적화 함수 : rmsprop)
-    # model.compile(loss='categorical_crossentropy',
-    #               optimizer='adam',
-    #               metrics=['accuracy'])
-
-    print(model.summary())
-
     return model
 
 # 컴파일하고 모델 반환하기
@@ -44,8 +37,17 @@ def get_model(in_shape, nb_classes):
     model = def_model(in_shape, nb_classes)
 
     # 최적화 함수 지정 = 모델 실행 환경 설정 (오차함수 : categorical_crossentropy / 최적화 함수 : rmsprop)
+    # model.compile(loss='categorical_crossentropy',
+    #               optimizer='adam',
+    #               metrics=['accuracy'])
+
+    # 최적화 함수 지정 = 모델 실행 환경 설정 (오차함수 : categorical_crossentropy / 최적화 함수 : rmsprop)
     model.compile(
         loss='categorical_crossentropy',
         optimizer=RMSprop(),
+        # optimizer='adam',
         metrics=['accuracy'])
+
+    print(model.summary())
+
     return model

@@ -55,14 +55,16 @@ model = cnn_model.get_model(in_shape, nb_classes)
 
 # 학습 실행하기 --- (*8)
 hist = model.fit(x_train, y_train,
-          batch_size=64,
-          epochs=20,
+          batch_size=64, # 몇개의 샘플로 가중치를 갱신할 것인지 = 전체 중 1/64문제를 풀때마다 해답을 맞춰보면서 가중치 갱신
+          epochs=20, # 학습의 반복 횟수 = 너무 많이하면 오버피팅
           verbose=1,
           validation_data=(x_test, y_test))
 
 # 모델 평가하기 --- (*9)
 score = model.evaluate(x_test, y_test, verbose=1)
 print('정답률=', score[1], 'loss=', score[0])
+# accuracy는 값이 1에 가깝고 높을수록 좋은 모델임
+# loss는 예측값과 실제값의 차이 = 값이 0에 가깝고 작을수록 좋음
 
 # 학습 상태를 그래프로 그리기 --- (*10)
 # 정답률 추이를 그래프로 그리기
