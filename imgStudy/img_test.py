@@ -14,7 +14,7 @@ def check_photo(path):
 
     # 저장한 CNN 모델 읽어 들이기
     model = cnn_model.get_model(in_shape, nb_classes)
-    model.load_weights('./photos-model.hdf5')
+    model.load_weights('./photos-model_mse.hdf5')
 
     # 이미지 읽어 들이기
     img = Image.open(path)

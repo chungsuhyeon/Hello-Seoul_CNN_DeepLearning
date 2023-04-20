@@ -28,7 +28,7 @@ def def_model(in_shape, nb_classes):
     model.add(Flatten()) # 벡터형태로 reshape = 2차원을 1차원으로 변경
     model.add(Dense(512, activation='relu')) # 은닉층 512개 / relu 사용
     model.add(Dropout(0.5))
-    model.add(Dense(nb_classes, activation='softmax')) # 출력층 nb_classes개 / softmax사용
+    model.add(Dense(nb_classes, activation='sigmoid')) # 출력층 nb_classes개 / softmax사용
 
     return model
 
@@ -43,9 +43,9 @@ def get_model(in_shape, nb_classes):
 
     # 최적화 함수 지정 = 모델 실행 환경 설정 (오차함수 : categorical_crossentropy / 최적화 함수 : rmsprop)
     model.compile(
-        loss='categorical_crossentropy',
-        optimizer=RMSprop(),
-        # optimizer='adam',
+        loss='mean_squared_error',
+        # optimizer=RMSprop(),
+        optimizer='adam',
         metrics=['accuracy'])
 
     print(model.summary())

@@ -4,7 +4,6 @@ from PIL import Image
 import os, glob, random
 
 outfile = "photos.npz" # 저장할 파일 이름
-# max_photo = 100 # 사용할 장 수
 photo_size = 32 # 이미지 크기
 x = [] # 이미지 데이터
 y = [] # 레이블 데이터

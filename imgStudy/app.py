@@ -10,6 +10,7 @@ class HelloWorld(Resource):
     def get(self,imgname):
         #img_test.check_photo_str("./img/searchImg/%s" .format(imgname))
         #DB connect
+
         #/web/resources/upload/deeplearning/filename
         #ai cnn learning
         #return = json
