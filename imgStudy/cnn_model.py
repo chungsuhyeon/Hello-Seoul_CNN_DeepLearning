@@ -13,10 +13,8 @@ def def_model(in_shape, nb_classes):
               activation='relu', # 사용할 활성화 함수
               input_shape=in_shape)) # 맨 처음층에 입력되는 값을 지정
     model.add(Conv2D(32, (3, 3), activation='relu'))
-    
     # 정해진 구역 안에서 최댓값을 뽑아냄
     model.add(MaxPooling2D(pool_size=(2, 2))) # MaxPooling 창의 크기 2X2
-    
     # 은닉층에 배치된 노드 중 일부를 임의로 끔 = 과적합 방지
     model.add(Dropout(0.25)) # 25%의 노드를 끔
 
@@ -27,6 +25,8 @@ def def_model(in_shape, nb_classes):
 
     model.add(Flatten()) # 벡터형태로 reshape = 2차원을 1차원으로 변경
     model.add(Dense(512, activation='relu')) # 은닉층 512개 / relu 사용
+    model.add(Dropout(0.5))
+    model.add(Dense(256, activation='relu'))  # 은닉층 512개 / relu 사용
     model.add(Dropout(0.5))
     model.add(Dense(nb_classes, activation='sigmoid')) # 출력층 nb_classes개 / softmax사용
 
