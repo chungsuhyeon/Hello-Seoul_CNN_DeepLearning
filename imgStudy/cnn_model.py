@@ -23,10 +23,15 @@ def def_model(in_shape, nb_classes):
     model.add(MaxPooling2D(pool_size=(2, 2)))
     model.add(Dropout(0.25))
 
+    model.add(Conv2D(128, (3, 3), activation='relu'))
+    model.add(Conv2D(128, (3, 3), activation='relu'))
+    model.add(MaxPooling2D(pool_size=(2, 2)))
+    model.add(Dropout(0.25))
+
     model.add(Flatten()) # 벡터형태로 reshape = 2차원을 1차원으로 변경
     model.add(Dense(512, activation='relu')) # 은닉층 512개 / relu 사용
     model.add(Dropout(0.5))
-    model.add(Dense(256, activation='relu'))  # 은닉층 512개 / relu 사용
+    model.add(Dense(256, activation='relu'))  # 은닉층 256개 / relu 사용
     model.add(Dropout(0.5))
     model.add(Dense(nb_classes, activation='sigmoid')) # 출력층 nb_classes개 / softmax사용
 
