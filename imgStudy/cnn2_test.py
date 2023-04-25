@@ -36,7 +36,7 @@ for i, xi in enumerate(x_train):
         # 회전 시키기 --- (*2)
         center = (16, 16) # 회전 중심
         mtx = cv2.getRotationMatrix2D(center, ang, 1.0)
-        xi2 = cv2.warpAffine(xi, mtx, (64, 64))
+        xi2 = cv2.warpAffine(xi, mtx, (0, 0)) # 이미지 이동
         x_new.append(xi2)
         y_new.append(yi)
         # 좌우 반전 --- (*3)
@@ -81,4 +81,4 @@ plt.title('Loss')
 plt.legend(['train', 'test'], loc='upper left')
 plt.show()
 
-model.save_weights('./photos-model_mse.hdf5')
+model.save_weights('./photos-model_add_layer.hdf5')

@@ -1,4 +1,5 @@
-from img_test import check_photo_str as ch
+# from img_test import check_photo_str as ch
+from img_test_64_test import check_photo_str as ch
 from flask import Flask
 from flask_restx import Api, Resource
 app = Flask(__name__)

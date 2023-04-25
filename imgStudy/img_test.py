@@ -14,7 +14,7 @@ def check_photo(path):
 
     # 저장한 CNN 모델 읽어 들이기
     model = cnn_model.get_model(in_shape, nb_classes)
-    model.load_weights('./photos-model_mse.hdf5')
+    model.load_weights('./photos-model.hdf5')
 
     # 이미지 읽어 들이기
     img = Image.open(path)
@@ -48,5 +48,5 @@ def check_photo_str(path, filename):
 
     return {"foodname":LABELS[idx], "accuracy":per, "imgName":filename}
 
-# if __name__ == '__main__':
-#     check_photo_str('C:/Python_code/imgStudy/img/searchImg/e5c11e62.jpg', "e5c11e62.jpg")
+if __name__ == '__main__':
+    check_photo_str('C:/Python_code/imgStudy/img/searchImg/0cbcd95d.jpg', "0cbcd95d.jpg")
