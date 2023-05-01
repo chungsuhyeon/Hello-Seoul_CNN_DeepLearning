@@ -55,6 +55,6 @@ def get_model(in_shape, nb_classes):
         optimizer='adam',
         metrics=['accuracy'])
 
-    print(model.summary())
+    # print(model.summary())
 
     return model
